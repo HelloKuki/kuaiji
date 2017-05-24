@@ -28,12 +28,36 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="35dp"
+                    android:layout_marginLeft="25dp"
                     android:background="@drawable/bg_main_month"
                     android:gravity="center"
                     android:text="5"
                     android:textColor="@color/white"
                     android:textSize="48dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="50dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_view_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="本月共收入:300元"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/text_view_spending"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="本月共支出:300元"
+                        android:textSize="18dp" />
+                </LinearLayout>
 
 
             </RelativeLayout>
@@ -55,12 +79,49 @@
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
                         android:background="@drawable/bg_main_month"
                         android:gravity="center"
                         android:text="5"
                         android:textColor="@color/white"
                         android:textSize="18dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/text_view_income_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_income"
+                            android:drawablePadding="10dp"
+                            android:text="300元"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/text_view_spending_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:drawableLeft="@drawable/ic_spending"
+                            android:drawablePadding="10dp"
+                            android:text="300元"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/button_add_title"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:src="@drawable/ic_add_bill"
+                        app:backgroundTint="@color/light_blue"
+                        app:pressedTranslationZ="0dp" />
+
                 </RelativeLayout>
 
 
@@ -74,19 +135,21 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:paddingTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/light_grey"
+        android:background="@color/bg_main"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/float_button"
+        android:id="@+id/button_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_add_bill"
+        app:backgroundTint="@color/light_blue"
         app:layout_anchor="@id/collapsing_toolbar_layout"
-        app:layout_anchorGravity="bottom|center" />
+        app:layout_anchorGravity="bottom|center"
+        app:pressedTranslationZ="10dp" />
 
 </android.support.design.widget.CoordinatorLayout>
